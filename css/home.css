@@ -21,6 +21,7 @@ body {
     width: 200px;
     float: left;
     height: 200px;
+    overflow: hidden;
 }
 .postdivpage {
 	border: 2px solid black;
@@ -50,11 +51,33 @@ body {
 	border-right: 2px solid black;
 	left: 0px;
 	padding: 4px;
-    z-index: 1;
+    z-index: -1;
     top: 0;
 	overflow-x: hidden;
+	margin-top: 100px;
 	text-align: center;
 }
 #main {
 	margin-left: 254px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li a {
+    display: inline;
+    width: 50px;
+}
+nav {
+	z-index: 1;
+	height: 100px;
+}
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    padding: 8px;
 }

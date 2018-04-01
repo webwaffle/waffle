@@ -9,6 +9,14 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     </head>
 <body>
+    <nav>
+<ul>
+    <li><a href="home.php">Home</a></li>
+    <li><a href="https://github.com/webwaffle/waffle">Code</a></li>
+    <li><a href="logout.php">Logout</a></li>
+    <li><a href="about.php">About</a></li>
+</ul>
+</nav>
 <div id="main">
 <?php
 $file="[" . substr(file_get_contents("posts.json"), 0, -1) . "]";
