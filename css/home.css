@@ -1,0 +1,83 @@
+.timetext {
+    color:grey;
+}
+body {
+	display: block;
+}
+.posttext {
+	white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.posttextpage {
+	overflow-y: scroll;
+	word-wrap: break-word;
+}
+.postdiv {
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 8px;
+    padding: 4px;
+    width: 200px;
+    float: left;
+    height: 200px;
+    overflow: hidden;
+}
+.postdivpage {
+	border: 2px solid black;
+    border-radius: 15px;
+    margin: 8px;
+    padding: 4px;
+    width: 95%;
+    float: left;
+    height: 95%;
+}
+#createpostlink {
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 4px 8px;
+	width: 50%;
+	height: 5%;
+	display: inline-block;
+	text-align: center
+}
+#createpostdiv {
+	background-color: lightgray;
+	width: 5%;
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	border-right: 2px solid black;
+	left: 0px;
+	padding: 4px;
+    z-index: -1;
+    top: 0;
+	overflow-x: hidden;
+	margin-top: 100px;
+	text-align: center;
+}
+#main {
+	margin-left: 254px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li a {
+    display: inline;
+    width: 50px;
+}
+nav {
+	z-index: 1;
+	height: 100px;
+}
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    padding: 8px;
+}
