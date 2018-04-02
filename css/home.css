@@ -51,7 +51,7 @@ body {
 	border-right: 2px solid black;
 	left: 0px;
 	padding: 4px;
-    z-index: -1;
+    z-index: 1;
     top: 0;
 	overflow-x: hidden;
 	margin-top: 100px;
@@ -70,8 +70,10 @@ li a {
     width: 50px;
 }
 nav {
-	z-index: 1;
+	z-index: 2;
 	height: 100px;
+	border-bottom: 2px solid black;
+	left: 0;
 }
 li {
     float: left;
