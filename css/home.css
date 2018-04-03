@@ -50,11 +50,9 @@ body {
 	position: fixed;
 	border-right: 2px solid black;
 	left: 0px;
-	padding: 4px;
-    z-index: 1;
+	padding: 0px;
     top: 0;
 	overflow-x: hidden;
-	margin-top: 100px;
 	text-align: center;
 }
 #main {
@@ -64,21 +62,34 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
 }
 li a {
     display: inline;
     width: 50px;
+    color: white;
+}
+li:hover {
+	background-color: white;
+}
+a.topbarlink:hover {
+	color: black;
 }
 nav {
-	z-index: 2;
+	margin-left: 244px;
 	height: 100px;
 	border-bottom: 2px solid black;
 	left: 0;
+	position: relative;
 }
 li {
     float: left;
+    padding: 16px;
 }
-
 a {
     display: block;
     padding: 8px;

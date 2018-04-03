@@ -10,11 +10,12 @@ session_start();
     </head>
 <body>
     <nav>
+        <h1 style="margin-left: 600px">Waffle</h1>
 <ul>
-    <li><a href="home.php">Home</a></li>
-    <li><a href="https://github.com/webwaffle/waffle">Code</a></li>
-    <li><a href="logout.php">Logout</a></li>
-    <li><a href="about.php">About</a></li>
+    <li><a class="topbarlink" href="home.php">Home</a></li>
+    <li><a class="topbarlink" href="https://github.com/webwaffle/waffle">Code</a></li>
+    <li><a class="topbarlink" href="logout.php">Logout</a></li>
+    <li><a class="topbarlink" href="about.php">About</a></li>
 </ul>
 </nav>
 <div id="main">
