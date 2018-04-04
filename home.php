@@ -10,7 +10,7 @@ session_start();
     </head>
 <body>
     <nav>
-        <h1 style="margin-left: 600px">Waffle</h1>
+        <h1 style="text-align: center;">Waffle</h1>
 <ul>
     <li><a class="topbarlink" href="home.php">Home</a></li>
     <li><a class="topbarlink" href="https://github.com/webwaffle/waffle">Code</a></li>
