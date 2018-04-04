@@ -10,6 +10,9 @@ foreach($json as $current) {
 if($correct_password==$_POST["password"]) {
     echo("Password Correct");
     $_SESSION["username"] = $_POST["username"];
+    $logfile = fopen("log.txt", "w");
+    fwrite($logfile, "[LOGIN]: User " . $_SESSION["username"] . " logged in at " . date('m-d-Y h:i:s A') . ".");
+    fclose($logfile);
     header("Location: home.php");
 }
 else
