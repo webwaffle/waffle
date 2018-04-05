@@ -5,7 +5,7 @@ $array = $_POST;
 $array["poster"] = $_SESSION["username"];
 $array["time"] = date('m-d-Y h:i:s A');
 $logfile = fopen("log.txt", "a");
-fwrite($logfile, "[POST]User " . $_SESSION["username"] . " posted with title \"" . $array["title"] . "\" at " . date("m-d-Y h:i:s A") . ".\n");
+fwrite($logfile, "[POST]: User " . $_SESSION["username"] . " posted with title \"" . $array["title"] . "\" at " . date("m-d-Y h:i:s A") . ".\n");
 fclose($logfile);
 $json_string = json_encode($array, JSON_PRETTY_PRINT);
 if(file_put_contents("posts.json", $json_string . ",", FILE_APPEND)) {

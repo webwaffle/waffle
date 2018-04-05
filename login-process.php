@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("America/New_York");
 $file="[" . substr(file_get_contents("users.json"), 0, -1) . "]";
 $json=json_decode($file);
 foreach($json as $current) {
