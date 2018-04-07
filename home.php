@@ -43,8 +43,8 @@ foreach(array_reverse($array_of_posts) as $current) {
                 echo('<a href="posts.php?post=' . $current->title . '">' . '<h1 class="posttitle">' . $current->title . "</h1></a>");
             }
         echo('<p class="timetext">Posted on ' . $current->time . '<br>By ' . $current->poster . '</p><p class="posttext">' . $current->text . '</p></div>');
+        }
     }
-}
 ?>
 	</div>
     </body>

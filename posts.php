@@ -26,7 +26,10 @@ foreach(array_reverse($array_of_posts) as $current) {
     	if (isset($current->title)) {
     		echo('<a href="posts.php?post=' . $current->title . '">' . '<h1 class="posttitle">' . $current->title . "</h1></a>");
 		}
-    	echo('<p class="timetext">Posted on ' . $current->time . '<br>By ' . $current->poster . '</p><p class="posttextpage">' . $current->text . '</p></div>');
+    	echo('<p class="timetext">Posted on ' . $current->time . '<br>By ' . $current->poster . '</p><p class="posttextpage">' . $current->text . '</p>');
+        if (isset($current->file_ext)) {
+            echo('<img src="imguploads/' . $current->title . $current->file_ext . '" /></div>');
+        }
 	}
 }
 ?>

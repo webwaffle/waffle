@@ -11,11 +11,11 @@ fclose($logfile);
 if(!empty($_FILES['file']))
   {
     $path = "imguploads/";
-    $path = $path . basename($_FILES["file"]["name"]);
+    $path = $path . $array["title"] . substr($_FILES['file']['name'], strripos($_FILES['file']['name'], '.'));
+    $array["file_ext"] = substr($_FILES['file']['name'], strripos($_FILES['file']['name'], '.'));
     if(move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-      echo($_FILES['file']['name'] . "\n");
-      echo($_FILES['file']['tmp_name'] . "\n");
-      echo(substr($_FILES['file']['name'], strripos($_FILES['file']['name'], '.')));
+      //echo($_FILES['file']['name'] . "\n");
+      //echo($_FILES['file']['tmp_name'] . "\n");
     } else{
         echo "There was an error uploading the file, please try again!";
     }
@@ -23,8 +23,8 @@ if(!empty($_FILES['file']))
 
 $json_string = json_encode($array, JSON_PRETTY_PRINT);
 if(file_put_contents("posts.json", $json_string . ",", FILE_APPEND)) {
-	//header("Location: home.php");
+	header("Location: home.php");
 }
 else
-	echo("error");
+  echo("error");
 ?>
