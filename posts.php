@@ -28,8 +28,9 @@ foreach(array_reverse($array_of_posts) as $current) {
 		}
     	echo('<p class="timetext">Posted on ' . $current->time . '<br>By ' . $current->poster . '</p><p class="posttextpage">' . $current->text . '</p>');
         if (isset($current->file_ext)) {
-            echo('<img src="imguploads/' . $current->title . $current->file_ext . '" /></div>');
+            echo('<img src="imguploads/' . $current->title . $current->file_ext . '" />');
         }
+        echo("</div>");
 	}
 }
 ?>
