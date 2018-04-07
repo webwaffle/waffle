@@ -11,10 +11,11 @@ fclose($logfile);
 if(!empty($_FILES['file']))
   {
     $path = "imguploads/";
-    $path = $path . basename( $_FILES['file']['name']);
+    $path = $path . basename($_FILES["file"]["name"]);
     if(move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-      echo($_FILES['file']['name']);
-      echo($_FILES['file']['tmp_name']);
+      echo($_FILES['file']['name'] . "\n");
+      echo($_FILES['file']['tmp_name'] . "\n");
+      echo(substr($_FILES['file']['name'], strripos($_FILES['file']['name'], '.')));
     } else{
         echo "There was an error uploading the file, please try again!";
     }
