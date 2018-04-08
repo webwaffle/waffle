@@ -60,8 +60,6 @@ body {
     position: relative;
 }
 .formarea {
-    width: 20%;
-    height: 30%;
     border: 2px solid black;
     border-radius: 15px;
     position: absolute;

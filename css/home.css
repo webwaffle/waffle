@@ -20,8 +20,8 @@ body {
     padding: 4px;
     width: 200px;
     float: left;
-    height: 200px;
     overflow: hidden;
+    display: inline-block
 }
 .postdivpage {
 	border: 2px solid black;
@@ -31,6 +31,7 @@ body {
     width: 95%;
     float: left;
     height: 95%;
+    display: inline-block;
 }
 #createpostlink {
 	text-align: center;
@@ -98,4 +99,8 @@ a {
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.imgpage {
+    max-height:200px;
+    max-width: 300px;
 }

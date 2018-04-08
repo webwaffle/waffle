@@ -5,6 +5,15 @@ $array = $_POST;
 $array["poster"] = $_SESSION["username"];
 $array["time"] = date('m-d-Y h:i:s A');
 $logfile = fopen("log.txt", "a");
+
+$file="[" . substr(file_get_contents("posts.json"), 0, -1) . "]";
+$json=json_decode($file);
+foreach($json as $current) {
+    if($current->title==$array["title"]) {
+        echo("There is already a post with that title.");
+    }
+}
+
 fwrite($logfile, "[POST]: User " . $_SESSION["username"] . " posted with title \"" . $array["title"] . "\" at " . date("m-d-Y h:i:s A") . ".\n");
 fclose($logfile);
 
