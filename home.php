@@ -15,6 +15,7 @@ session_start();
     <li><a class="topbarlink" href="home.php">Home</a></li>
     <li><a class="topbarlink" href="https://github.com/webwaffle/waffle">Code</a></li>
     <li><a class="topbarlink" href="logout.php">Logout</a></li>
+    <li><a class="topbarlink" href="you.php">My Profile</a></li>
     <li><a class="topbarlink" href="about.php">About</a></li>
 </ul>
 </nav>

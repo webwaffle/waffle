@@ -12,6 +12,7 @@
             <li><a class="topbarlink" href="home.php">Home</a></li>
             <li><a class="topbarlink" href="https://github.com/webwaffle/waffle">Code</a></li>
             <li><a class="topbarlink" href="logout.php">Logout</a></li>
+            <li><a class="topbarlink" href="you.php">My Profile</a></li>
             <li><a class="topbarlink" href="about.php">About</a></li>
         </ul>
     </nav>
@@ -26,9 +27,10 @@
                 $you["username"] = $_SESSION["username"];
                 if (isset($current->bio)) {
                     $you["bio"] = $current->bio;
+                    echo($you["bio"]);
                     echo('
                     <form action="you-process.php">
-                    <textarea rows="5" cols="40">' . $current->bio . '</textarea>
+                    <textarea rows="5" cols="40" name="bio">' . $current->bio . '</textarea>
                     <input type="submit" value="Change bio" />
                     </form>
                     ');
