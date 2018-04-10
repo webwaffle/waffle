@@ -16,11 +16,16 @@
             <li><a class="topbarlink" href="about.php">About</a></li>
         </ul>
     </nav>
-    
+
     <div id="main">
-        <?php 
-        $file="[" . substr(file_get_contents("users.json"), 0, -1) . "]";
+        <?php
+        $file = file_get_contents("users.json");
+        $file2 = substr($file, 0, -3);
+        $file3 = "[" . $file2 . "]";
+        echo "$file";
+        //$file='[{ "username": "sam", "password": "derp", "bio": "i like waffles" }]';
         $json=json_decode($file);
+        echo($file);
         foreach($json as $current) {
             if($current->username==$_SESSION["username"]) {
                 $you = array();
@@ -29,7 +34,7 @@
                     $you["bio"] = $current->bio;
                     echo($you["bio"]);
                     echo('
-                    <form action="you-process.php">
+                    <form method="POST" action="you-process.php">
                     <textarea rows="5" cols="40" name="bio">' . $current->bio . '</textarea>
                     <input type="submit" value="Change bio" />
                     </form>
@@ -37,7 +42,7 @@
                 }
                 else
                     echo('
-                    <form action="you-process.php">
+                    <form method="POST" action="you-process.php">
                     <textarea name="bio" rows="5" cols="40">Describe yourself...</textarea>
                     <input type="submit" value="Add bio" />
                     </form>
@@ -46,7 +51,7 @@
         }
         ?>
     </div>
-    
+
     <div id="createpostdiv">
     	<a href="create-post.php"><p id="createpostlink">Create Post</p></a>
         <?php

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 $file="[" . substr(file_get_contents("users.json"), 0, -1) . "]";
 $json=json_decode($file);
@@ -13,12 +13,12 @@ if (isset($_POST["bio"])) {
                 echo("4");
                 //echo("???\n");
                 $current->bio = $_POST["bio"];
-                $json = json_encode($current, JSON_PRETTY_PRINT);
-                $json = substr($json, 1, -1);
-                $json = $json . ",";
-                echo($json);
+                $json_string = json_encode($json, JSON_PRETTY_PRINT);
+                $json_string = substr($json, 1, -1);
+                $json_string = $json . ",";
+                file_put_contents("users.json", $json_string);
             }
-            
+
         }
     }
 }
