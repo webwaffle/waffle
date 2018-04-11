@@ -19,13 +19,9 @@
 
     <div id="main">
         <?php
-        $file = file_get_contents("users.json");
-        $file2 = substr($file, 0, -3);
-        $file3 = "[" . $file2 . "]";
-        echo "$file";
+        $file="[" . rtrim(file_get_contents("users.json"), ",") . "]";
         //$file='[{ "username": "sam", "password": "derp", "bio": "i like waffles" }]';
         $json=json_decode($file);
-        echo($file);
         foreach($json as $current) {
             if($current->username==$_SESSION["username"]) {
                 $you = array();
@@ -43,7 +39,7 @@
                 else
                     echo('
                     <form method="POST" action="you-process.php">
-                    <textarea name="bio" rows="5" cols="40">Describe yourself...</textarea>
+                    <textarea name="bio_new" rows="5" cols="40">Describe yourself...</textarea>
                     <input type="submit" value="Add bio" />
                     </form>
                     ');
