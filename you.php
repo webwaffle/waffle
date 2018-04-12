@@ -17,6 +17,7 @@
         </ul>
     </nav>
 
+
     <div id="main">
         <?php
         $file="[" . rtrim(file_get_contents("users.json"), ",") . "]";
@@ -45,7 +46,6 @@
                     ');
             }
         }
-        //test
         ?>
     </div>
 
