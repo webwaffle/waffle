@@ -11,7 +11,7 @@
 
 
     <div id="main">
-
+      <?php ?>
     </div>
 
     <?php include("sidebar.php"); ?>
