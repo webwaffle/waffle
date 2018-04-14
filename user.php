@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <html>
 <head>
-    <title><?php $_GET["user"]; ?></title>
+    <title><?php echo($_GET["user"] . "'s Profile'"); ?></title>
     <link rel="stylesheet" href="css/home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
