@@ -7,11 +7,11 @@ $json=json_decode($file);
 if (isset($_POST["bio"]) or isset($_POST["bio_new"])) {
 
     foreach($json as $current) {
-        echo("2");
+        //echo("2");
         if($current->username == $_SESSION["username"]) {
-            echo("3");
+            //echo("3");
             if (isset($current->bio)) {
-                echo("4");
+                //echo("4");
                 //echo("???\n");
                 $current->bio = $_POST["bio"];
                 $json_string = json_encode($json, JSON_PRETTY_PRINT);
@@ -30,5 +30,5 @@ if (isset($_POST["bio"]) or isset($_POST["bio_new"])) {
     }
 }
 
-//header("Location: you.php");
+header("Location: you.php");
 ?>

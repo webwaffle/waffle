@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="css/home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" href="css/forms.css">
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
 </head>
 <body>
     <nav>
@@ -29,9 +31,10 @@
                 $you["username"] = $_SESSION["username"];
                 if (isset($current->bio)) {
                     $you["bio"] = $current->bio;
-                    echo($you["bio"]);
+                    echo('<p id="biotext" style="text-align: left;">' . $you["bio"] . '</p>');
+                    echo('<button id="biobutton">Change Bio</button>');
                     echo('
-                    <form method="POST" action="you-process.php">
+                    <form method="POST" action="you-process.php" id="bioform">
                     <textarea rows="5" cols="40" name="bio">' . $current->bio . '</textarea>
                     <input type="submit" value="Change bio" />
                     </form>
@@ -69,5 +72,15 @@
 }
 ?>
 	</div>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#bioform").hide();
+    $("#biobutton").click(function(){
+      $("#biotext").hide();
+      $(this).hide();
+      $("#bioform").show();
+    });
+});
+  </script>
     </body>
 </html>
