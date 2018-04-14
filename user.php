@@ -21,9 +21,9 @@ if ($_GET["user"] == $_SESSION["username"]) {
       foreach($json as $current) {
         if ($current->username == $_GET["user"]) {
           $user = array();
-          $user["username"] = $current->username
+          $user["username"] = $current->username;
           if (isset($current->bio)) {
-            $user["bio"] = $current->bio
+            $user["bio"] = $current->bio;
           }
           print_r($user);
         }
