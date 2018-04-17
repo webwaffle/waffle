@@ -25,7 +25,11 @@ if ($_GET["user"] == $_SESSION["username"]) {
           if (isset($current->bio)) {
             $user["bio"] = $current->bio;
           }
-          print_r($user);
+          //print_r($user);
+          echo("<h1>" . $user["username"] . "</h1>");
+          if (isset($user["bio"])) {
+            echo("<p>" . $user["bio"] . "</p>");
+          }
         }
       }
       ?>
