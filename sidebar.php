@@ -1,7 +1,7 @@
 <div id="createpostdiv">
   <a href="create-post.php"><p id="createpostlink">Create Post</p></a>
     <?php
-$file="[" . substr(file_get_contents("posts.json"), 0, -1) . "]";
+$file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $array_of_posts=json_decode($file);
 foreach(array_reverse($array_of_posts) as $current) {
     if ($current->poster == $_SESSION["username"]) {

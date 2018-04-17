@@ -14,7 +14,7 @@
 
     <div id="main">
         <?php
-        $file="[" . rtrim(file_get_contents("users.json"), ",") . "]";
+        $file="[" . rtrim(file_get_contents("json/users.json"), ",") . "]";
         //$file='[{ "username": "sam", "password": "derp", "bio": "i like waffles" }]';
         $json=json_decode($file);
         foreach($json as $current) {

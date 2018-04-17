@@ -6,7 +6,7 @@ $array["poster"] = $_SESSION["username"];
 $array["time"] = date('m-d-Y h:i:s A');
 $logfile = fopen("log.txt", "a");
 
-$file="[" . substr(file_get_contents("posts.json"), 0, -1) . "]";
+$file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $json=json_decode($file);
 foreach($json as $current) {
     if($current->title==$array["title"]) {
@@ -31,7 +31,7 @@ if(!empty($_FILES['file']))
   }
 
 $json_string = json_encode($array, JSON_PRETTY_PRINT);
-if(file_put_contents("posts.json", $json_string . ",", FILE_APPEND)) {
+if(file_put_contents("json/posts.json", $json_string . ",", FILE_APPEND)) {
 	header("Location: home.php");
 }
 else

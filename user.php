@@ -16,7 +16,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
 
     <div id="main">
       <?php
-      $file="[" . rtrim(file_get_contents("users.json"), ",") . "]";
+      $file="[" . rtrim(file_get_contents("json/users.json"), ",") . "]";
       $json=json_decode($file);
       foreach($json as $current) {
         if ($current->username == $_GET["user"]) {

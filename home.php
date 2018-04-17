@@ -13,7 +13,7 @@ session_start();
 
 <div id="main">
 <?php
-$file="[" . substr(file_get_contents("posts.json"), 0, -1) . "]";
+$file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $array_of_posts=json_decode($file);
 foreach(array_reverse($array_of_posts) as $current) {
     echo('<div class="postdiv">');
