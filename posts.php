@@ -25,8 +25,10 @@ foreach(array_reverse($array_of_posts) as $current) {
 		}
     	echo('<p class="timetext">Posted on ' . $current->time . '<br>By <a style="color:grey; display: inline;" href="user.php?user=' . $current->poster . '">' . $current->poster . '</a></p><p class="posttext">' . $current->text . '</p>');
         if (isset($current->file_ext)) {
+					if ($current->file_ext != "") {
             echo('<img class="imgpage" src="imguploads/' . $current->title . $current->file_ext . '" />');
-        }
+        	}
+				}
 				echo('
 				<form action="comment-process.php" method="POST">
 					<input type="text" name="comment" />
