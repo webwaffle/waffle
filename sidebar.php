@@ -1,5 +1,5 @@
 <div id="createpostdiv">
-  <a href="create-post.php"><p id="createpostlink">Create Post</p></a>
+  <a href="create-post.html"><p id="createpostlink">Create Post</p></a>
     <?php
 $file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $array_of_posts=json_decode($file);

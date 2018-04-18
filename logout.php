@@ -1,4 +1,4 @@
 <?php
-$_SESSION = [];
-header("Location: index.php");
+$_SESSION = array();
+header("Location: index.html");
 ?>

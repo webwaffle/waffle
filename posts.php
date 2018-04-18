@@ -16,6 +16,7 @@ date_default_timezone_set("America/New_York");
 <?php
 $file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $array_of_posts=json_decode($file);
+
 foreach(array_reverse($array_of_posts) as $current) {
 	if (isset($current->title) && $current->title == $_GET["post"]) {
     	echo('<div class="postdivpage">');
@@ -32,19 +33,29 @@ foreach(array_reverse($array_of_posts) as $current) {
 					<input type="submit" value="comment" />
 				</form>
 				');
+				//begin comment section
 				$file_2="[" . substr(file_get_contents("json/comments.json"), 0, -1) . "]";
-				$array_of_comments=json_decode($file_2);
+				$array_of_comments=json_decode($file_2, JSON_PRETTY_PRINT);
+				//print_r($array_of_comments);
+				$has_comments = FALSE;
 				foreach (array_reverse($array_of_comments) as $current) {
-					if ($current->post == $_GET["post"]) {
-						$commenter = $current->commenter;
-						$time = $current->time;
-						$comment = $current->comment;
+					if ($current["post"] == $_GET["post"]) {
+						$has_comments = TRUE;
+						$commenter = $current["commenter"];
+						$time = $current["time"];
+						$comment = $current["comment"];
 						echo("<div class='postdiv'>");
 						echo("<p class='timetext'>$time<br>By <a style='color:grey; display: inline;'href='user.php?user=$commenter'>$commenter</a></p>");
 						echo("<p class='posttext'>$comment</p>");
 						echo("</div>");
 					}
 				}
+				if ($has_comments) {
+				}
+				else {
+					echo("No comments found.");
+				}
+				//end comment section
         echo("</div>");
 	}
 }
