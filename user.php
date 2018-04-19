@@ -30,6 +30,10 @@ if ($_GET["user"] == $_SESSION["username"]) {
           if (isset($user["bio"])) {
             echo("<p>" . $user["bio"] . "</p>");
           }
+          echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
+          <input type='submit' value='Add Friend' name='submit' />
+          </form>");
+          //end
         }
       }
       ?>
