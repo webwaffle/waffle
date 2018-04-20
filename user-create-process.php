@@ -1,9 +1,11 @@
 <?php
 session_start();
 date_default_timezone_set("America/New_York");
-$array = $_POST;
-$friends = ["example"];
-array_push($array, $friends);
+$array = [];
+$array["username"] = $_POST["username"];
+$array["password"] = $_POST["password"];
+$friends = [];
+$array["friends"] = $friends;
 $json_string = json_encode($array, JSON_PRETTY_PRINT);
 if(file_put_contents("json/users.json", $json_string . ",", FILE_APPEND)) {
 	$_SESSION["username"] = $_POST["username"];

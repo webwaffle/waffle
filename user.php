@@ -30,12 +30,25 @@ if ($_GET["user"] == $_SESSION["username"]) {
           if (isset($user["bio"])) {
             echo("<p>" . $user["bio"] . "</p>");
           }
-          echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
-          <input type='submit' value='Add Friend' name='submit' />
-          </form>");
           //end
         }
       }
+      foreach ($json as $current) {
+        if ($current->username == $_GET["user"]) {
+          foreach ($json as $current2) {
+            if ($current2->username == $_SESSION["username"]) {
+              if (in_array($_GET["user"], $current2->friends)) {
+                echo('<p>' . $_GET["user"] . ' is already in your friends list.</p>');
+              }
+              else {
+                echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
+                <input type='submit' value='Add Friend' name='submit' />
+                </form>");
+                }
+              }
+            }
+          }
+        }
       ?>
     </div>
 
