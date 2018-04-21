@@ -10,6 +10,7 @@ if (isset($_POST["submit"]) && isset($_GET["user"])) {
       $json_string2 = substr($json_string, 1, -1);
       $json_string3 = $json_string2 . ",";
       file_put_contents("json/users.json", $json_string3);
+      header("Location: user.php?user=" . $_GET["user"]);
     }
   }
 }

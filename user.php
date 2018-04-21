@@ -50,6 +50,21 @@ if ($_GET["user"] == $_SESSION["username"]) {
           }
         }
       ?>
+      <?php
+      $file="[" . rtrim(file_get_contents("json/messages.json"), ",") . "]";
+      $json=json_decode($file);
+      foreach($json as $current) {
+        if ($current->sender == $_SESSION["username"] or $current->receiver == $_SESSION["username"]) {
+          echo('<p class="message">' . $current->sender . ": " . $current->message . "</p><br>");
+        }
+      }
+      ?>
+      <?php
+      echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
+      ?>
+      <input type="text" name="message" />
+      <input type="submit" value="Send" />
+    </form>
     </div>
 
     <?php include("sidebar.php"); ?>
