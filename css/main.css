@@ -1,12 +1,18 @@
 * {
 	font-family: 'Comfortaa', cursive;
+	color: #FEFCFB;
 }
 body {
 	overflow: auto;
+	/*background-color: rgb(0, 20, 64);*/
+	background-color: white;
 }
 a {
 	text-decoration: none;
 }
 div {
 	overflow: auto;
+}
+html {
+	padding: 0px;
 }

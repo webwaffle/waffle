@@ -8,6 +8,7 @@ date_default_timezone_set("America/New_York");
 	<link rel="stylesheet" href="css/home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+		<script type="text/javascript" src="js/lib/less.js"></script>
 	</head>
 	<body>
 		<?php include("topbar.html"); ?>

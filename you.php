@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link rel="stylesheet" href="css/forms.css">
     <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/less.js"></script>
 </head>
 <body>
     <?php include("topbar.html"); ?>
@@ -23,7 +24,7 @@
                 $you["username"] = $_SESSION["username"];
                 if (isset($current->bio)) {
                     $you["bio"] = $current->bio;
-                    echo('<p id="biotext" style="text-align: left;">' . $you["bio"] . '</p>');
+                    echo('<p id="biotext" style="text-align: left; color: 0a1128;">' . $you["bio"] . '</p>');
                     echo('<button id="biobutton">Change Bio</button>');
                     echo('
                     <form method="POST" action="you-process.php" id="bioform">

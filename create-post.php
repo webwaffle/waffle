@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/forms.css" />
     <link rel="stylesheet" href="css/home.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <script type="text/javascript" src="js/lib/less.js"></script>
     </head>
 <body>
     <?php include("topbar.html"); ?>

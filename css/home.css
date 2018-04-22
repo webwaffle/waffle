@@ -14,17 +14,29 @@ body {
 	word-wrap: break-word;
 }
 .postdiv {
-    border: 2px solid black;
+    border: 2px solid #0A1128;
     border-radius: 15px;
     margin: 8px;
     padding: 4px;
     width: 200px;
     float: left;
     overflow: hidden;
-    display: inline-block
+    display: inline-block;
+    background-color: #0a1128;
+}
+.postdivsidebar {
+    border: 2px solid #0A1128;
+    border-radius: 15px;
+    margin: 8px;
+    padding: 4px;
+    width: 200px;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    background-color: white;
 }
 .postdivpage {
-	border: 2px solid black;
+	border: 2px solid #0A1128;
     border-radius: 15px;
     margin: 8px;
     padding: 4px;
@@ -35,29 +47,33 @@ body {
 }
 #createpostlink {
 	text-align: center;
-	border: 2px solid black;
+	border: 2px solid #0A1128;
 	border-radius: 15px;
 	padding: 4px 8px;
 	width: 50%;
 	height: 5%;
 	display: inline-block;
-	text-align: center
+	text-align: center;
 }
 #createpostdiv {
-	background-color: lightgray;
+	background-color: rgb(0, 20, 64);
 	width: 5%;
 	height: 100%;
 	width: 250px;
 	position: fixed;
-	border-right: 2px solid black;
+	border-right: 2px solid #0A1128;
 	left: 0px;
 	padding: 0px;
-    top: 0;
+  top: 0;
 	overflow-x: hidden;
 	text-align: center;
+  margin-bottom: 150px;
+  overflow-y: scroll;
+  z-index: 0;
 }
 #main {
-	margin-left: 254px;
+	margin-left: 243px;
+  background-color: white;
 }
 ul {
     list-style-type: none;
@@ -65,7 +81,7 @@ ul {
     padding: 0;
     height: 50px;
     width: 100%;
-    background-color: black;
+    background-color: #0A1128;
     position: absolute;
     bottom: 0;
 }
@@ -78,14 +94,17 @@ li:hover {
 	background-color: white;
 }
 a.topbarlink:hover {
-	color: black;
+	color: #0A1128;
 }
 nav {
 	margin-left: 244px;
 	height: 100px;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #0A1128;
 	left: 0;
 	position: relative;
+  background-color: rgb(0, 20, 64);
+  margin-top: 0;
+  top: 0;
 }
 li {
     float: left;
@@ -105,3 +124,21 @@ a {
     max-width: 300px;
     border-radius: 4px;
 }
+#friends {
+  border-top: 2px solid #0A1128;
+  width: 250px;
+  height: 150px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.friend {
+  text-align: left;
+  border: 1px solid #0A1128;
+  padding: 0px;
+}
+/*
+https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2
+https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb
+*/

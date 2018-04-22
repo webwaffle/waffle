@@ -9,6 +9,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
     <link rel="stylesheet" href="css/home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <script type="text/javascript" src="js/lib/less.js"></script>
 </head>
 <body>
   <?php include("topbar.html"); ?>
@@ -26,9 +27,9 @@ if ($_GET["user"] == $_SESSION["username"]) {
             $user["bio"] = $current->bio;
           }
           //print_r($user);
-          echo("<h1>" . $user["username"] . "</h1>");
+          echo("<h1 style='color: #0a1128;'>" . $user["username"] . "</h1>");
           if (isset($user["bio"])) {
-            echo("<p>" . $user["bio"] . "</p>");
+            echo("<p style='color: #0a1128;'>" . $user["bio"] . "</p>");
           }
           //end
         }
