@@ -19,20 +19,4 @@ foreach(array_reverse($array_of_posts) as $current) {
 }
 }
 ?>
-<div id="friends">
-  <?php
-  $file="[" . substr(file_get_contents("json/users.json"), 0, -1) . "]";
-  $json=json_decode($file);
-  //get user object
-  foreach ($json as $current) {
-    if ($current->username == $_SESSION["username"]) {
-      $user = $current;
-    }
-  }
-  //end
-  foreach ($user->friends as $current) {
-    echo('<a class="friend" href="user.php?user=' . $current . '">' . $current . '</a>');
-  }
-   ?>
-</div>
 </div>

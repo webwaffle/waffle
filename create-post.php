@@ -15,7 +15,7 @@
     <form action="create-post-process.php" method="POST" style="overflow: hidden;" enctype="multipart/form-data">
     <input name="title" type="text"/>
     <textarea name="text" cols="40" rows="5"></textarea>
-    <input type="file" name="file">
+    <input type="file" name="file" class="smallbutton">
     <input type="submit" />
     </form>
 </div>

@@ -53,7 +53,9 @@ body {
 	width: 50%;
 	height: 5%;
 	display: inline-block;
-	text-align: center;
+    text-align: center;
+    background-color: white;
+    color: black;
 }
 #createpostdiv {
 	background-color: rgb(0, 20, 64);
@@ -124,19 +126,26 @@ a {
     max-width: 300px;
     border-radius: 4px;
 }
-#friends {
-  border-top: 2px solid #0A1128;
-  width: 250px;
-  height: 150px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-}
 .friend {
   text-align: left;
   border: 1px solid #0A1128;
   padding: 0px;
+}
+.smallbutton {
+    border-radius: 4px;
+    margin:8px;
+    padding: 15px 20px;
+    
+    margin-left: 0px;
+    background-color: #1282A2;
+}
+.smallbutton:hover {
+    border-radius: 0px;
+    margin:8px;
+    padding: 15px 20px;
+    
+    margin-left: 0px;
+    background-color: #0A1128;
 }
 /*
 https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2

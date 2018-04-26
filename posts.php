@@ -22,9 +22,9 @@ foreach(array_reverse($array_of_posts) as $current) {
 	if (isset($current->title) && $current->title == $_GET["post"]) {
     	echo('<div class="postdivpage">');
     	if (isset($current->title)) {
-    		echo('<a href="posts.php?post=' . $current->title . '">' . '<h1 class="posttitle">' . $current->title . "</h1></a>");
+    		echo('<a href="posts.php?post=' . $current->title . '">' . '<h1 class="posttitle darktext">' . $current->title . "</h1></a>");
 		}
-    	echo('<p class="timetext">Posted on ' . $current->time . '<br>By <a style="color:grey; display: inline;" href="user.php?user=' . $current->poster . '">' . $current->poster . '</a></p><p class="posttext">' . $current->text . '</p>');
+    	echo('<p class="timetext">Posted on ' . $current->time . '<br>By <a style="color:grey; display: inline;" href="user.php?user=' . $current->poster . '">' . $current->poster . '</a></p><p class="posttext darktext">' . $current->text . '</p>');
         if (isset($current->file_ext)) {
 					if ($current->file_ext != "") {
             echo('<img class="imgpage" src="imguploads/' . $current->title . $current->file_ext . '" />');
@@ -32,8 +32,8 @@ foreach(array_reverse($array_of_posts) as $current) {
 				}
 				echo('
 				<form action="comment-process.php" method="POST">
-					<input type="text" name="comment" />
-					<input type="submit" value="comment" />
+					<input type="text" class="darktext" name="comment" />
+					<input type="submit" class="smallbutton" value="comment" />
 				</form>
 				');
 				//begin comment section

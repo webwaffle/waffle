@@ -43,7 +43,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
               }
               else {
                 echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
-                <input type='submit' value='Add Friend' name='submit' />
+                <input type='submit' class='smallbutton' value='Add Friend' name='submit' />
                 </form>");
                 }
               }
@@ -56,15 +56,15 @@ if ($_GET["user"] == $_SESSION["username"]) {
       $json=json_decode($file);
       foreach($json as $current) {
         if ($current->sender == $_SESSION["username"] or $current->receiver == $_SESSION["username"]) {
-          echo('<p class="message">' . $current->sender . ": " . $current->message . "</p><br>");
+          echo('<p class="message darktext">' . $current->sender . ": " . $current->message . "</p><br>");
         }
       }
       ?>
       <?php
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
       ?>
-      <input type="text" name="message" />
-      <input type="submit" value="Send" />
+      <input type="text" name="message" class="darktext"/>
+      <input class="smallbutton" type="submit" value="Send" />
     </form>
     </div>
 
