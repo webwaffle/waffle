@@ -55,8 +55,11 @@ if ($_GET["user"] == $_SESSION["username"]) {
       $file="[" . rtrim(file_get_contents("json/messages.json"), ",") . "]";
       $json=json_decode($file);
       foreach($json as $current) {
-        if ($current->sender == $_SESSION["username"] or $current->receiver == $_SESSION["username"]) {
-          echo('<p class="message darktext">' . $current->sender . ": " . $current->message . "</p><br>");
+        if($_SESSION["username"] == $current->receiver && $_SESSION["username"] != $current->sender) {
+          echo("<p class='message-inbound darktext'>" . $current->sender . ": " . $current->message . "</p>");
+        }
+        if($_SESSION["username"] == $current->sender && $_SESSION["username"] != $current->receiver) {
+          echo("<p class='message-outbound darktext'>" . $current->sender . ": " . $current->message . "</p>");
         }
       }
       ?>
