@@ -60,18 +60,18 @@ if ($_GET["user"] == $_SESSION["username"]) {
       $json=json_decode($file);
       foreach($json as $c) {
         if ($u == $c->sender && $o == $c->receiver) {
-          echo("<p class='message darktext'>" . $c->sender . ":" . $c->message . "</p>");
+          echo("<p class='message-out'>" . $c->message . "</p><br>");
         }
         if ($u == $c->receiver && $o == $c->sender) {
-          echo("<p class='message darktext'>" . $c->sender . ":" . $c->message . "</p>");
+          echo("<p class='message-in darktext'>" . $c->message . "</p><br>");
         }
       }
+      echo("</div>");
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
       ?>
       <input type="text" name="message" class="darktext"/>
       <input class="smallbutton" type="submit" value="Send" />
     </form>
-    </div>
     </div>
     <!--end message section-->
 
