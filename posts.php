@@ -11,7 +11,7 @@ date_default_timezone_set("America/New_York");
 		<script type="text/javascript" src="js/lib/less.js"></script>
 	</head>
 	<body>
-		<?php include("topbar.html"); ?>
+		<?php include("topbar.php"); ?>
 
 <div id="main">
 <?php

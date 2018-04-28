@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/lib/less.js"></script>
     </head>
 <body>
-    <?php include("topbar.html"); ?>
+    <?php include("topbar.php"); ?>
 
 <div id="main">
     <form action="create-post-process.php" method="POST" style="overflow: hidden;" enctype="multipart/form-data">

@@ -10,7 +10,7 @@ session_start();
     <script type="text/javascript" src="js/lib/less.js"></script>
     </head>
 <body>
-    <?php include("topbar.html"); ?>
+    <?php include("topbar.php"); ?>
 
 <div id="main">
 <?php

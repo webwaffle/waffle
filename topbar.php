@@ -7,5 +7,6 @@
         <li><a class="topbarlink" href="you.php">My Profile</a></li>
         <li><a class="topbarlink" href="friends.php">My Friends</a></li>
         <li><a class="topbarlink" href="about.php">About</a></li>
+        <li class="topbarlink"><?php echo($_SESSION["username"]); ?></li>
     </ul>
 </nav>

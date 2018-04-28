@@ -12,7 +12,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
     <script type="text/javascript" src="js/lib/less.js"></script>
 </head>
 <body>
-  <?php include("topbar.html"); ?>
+  <?php include("topbar.php"); ?>
 
 
     <div id="main">
@@ -52,24 +52,26 @@ if ($_GET["user"] == $_SESSION["username"]) {
         }
       ?>
       <?php
+      //begin message section
+      $u = $_SESSION["username"];
+      $o = $_GET["user"];
       $file="[" . rtrim(file_get_contents("json/messages.json"), ",") . "]";
       $json=json_decode($file);
-      foreach($json as $current) {
-        if($_SESSION["username"] == $current->receiver && $_SESSION["username"] != $current->sender) {
-          echo("<p class='message-inbound darktext'>" . $current->sender . ": " . $current->message . "</p>");
+      foreach($json as $c) {
+        if ($u == $c->sender && $o == $c->receiver) {
+          echo($c->sender . ":" . $c->message . "<br>");
         }
-        if($_SESSION["username"] == $current->sender && $_SESSION["username"] != $current->receiver) {
-          echo("<p class='message-outbound darktext'>" . $current->sender . ": " . $current->message . "</p>");
+        if ($u == $c->receiver && $o == $c->receiver) {
+          echo($c->sender . ":" . $c->message . "<br>");
         }
       }
-      ?>
-      <?php
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
       ?>
       <input type="text" name="message" class="darktext"/>
       <input class="smallbutton" type="submit" value="Send" />
     </form>
     </div>
+    <!--end message section-->
 
     <?php include("sidebar.php"); ?>
     </body>
