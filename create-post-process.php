@@ -4,6 +4,8 @@ date_default_timezone_set("America/New_York");
 $array = $_POST;
 $array["poster"] = $_SESSION["username"];
 $array["time"] = date('m-d-Y h:i:s A');
+$array["likes"] = 0;
+$array["likers"] = [];
 $logfile = fopen("log.txt", "a");
 
 $file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";

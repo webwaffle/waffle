@@ -13,7 +13,7 @@
 
 <div id="main">
     <form action="create-post-process.php" method="POST" style="overflow: hidden;" enctype="multipart/form-data">
-    <input name="title" type="text"/>
+    <input name="title" placeholder="title" type="text" style="color: white;"/>
     <textarea name="text" cols="40" rows="5"></textarea>
     <input type="file" name="file" class="smallbutton">
     <input type="submit" />

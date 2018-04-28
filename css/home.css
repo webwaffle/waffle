@@ -176,6 +176,22 @@ a {
     float: left;
     margin-left: 2px;
 }
+.smalltext {
+    border-radius: 200px;
+    margin:8px;
+    padding: 5px;
+    width: 200px;
+    margin-left: 0px;
+    background-color: #0A1128;
+}
+.smalltext:hover {
+    border-radius: 200px;
+    margin:8px;
+    padding: 5px;
+    width: 200px;
+    background-color:#034078;
+    margin-left: 0px;
+}
 /*
 https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2
 https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb

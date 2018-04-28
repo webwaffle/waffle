@@ -39,7 +39,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
           foreach ($json as $current2) {
             if ($current2->username == $_SESSION["username"]) {
               if (in_array($_GET["user"], $current2->friends)) {
-                echo('<p>' . $_GET["user"] . ' is already in your friends list.</p>');
+                echo('<p class="darktext">' . $_GET["user"] . ' is already in your friends list.</p>');
               }
               else {
                 echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
@@ -60,16 +60,16 @@ if ($_GET["user"] == $_SESSION["username"]) {
       $json=json_decode($file);
       foreach($json as $c) {
         if ($u == $c->sender && $o == $c->receiver) {
-          echo("<p class='message-out'>" . $c->message . "</p><br>");
+          echo("<p class='message-out'>" . $c->message . "</p><br><br>");
         }
         if ($u == $c->receiver && $o == $c->sender) {
-          echo("<p class='message-in darktext'>" . $c->message . "</p><br>");
+          echo("<p class='message-in darktext'>" . $c->message . "</p><br><br>");
         }
       }
       echo("</div>");
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
       ?>
-      <input type="text" name="message" class="darktext"/>
+      <input type="text" name="message" class="smalltext"/>
       <input class="smallbutton" type="submit" value="Send" />
     </form>
     </div>
