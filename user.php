@@ -51,6 +51,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
           }
         }
       ?>
+      <div id="messages">
       <?php
       //begin message section
       $u = $_SESSION["username"];
@@ -59,10 +60,10 @@ if ($_GET["user"] == $_SESSION["username"]) {
       $json=json_decode($file);
       foreach($json as $c) {
         if ($u == $c->sender && $o == $c->receiver) {
-          echo($c->sender . ":" . $c->message . "<br>");
+          echo("<p class='message darktext'>" . $c->sender . ":" . $c->message . "</p>");
         }
-        if ($u == $c->receiver && $o == $c->receiver) {
-          echo($c->sender . ":" . $c->message . "<br>");
+        if ($u == $c->receiver && $o == $c->sender) {
+          echo("<p class='message darktext'>" . $c->sender . ":" . $c->message . "</p>");
         }
       }
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
@@ -70,6 +71,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
       <input type="text" name="message" class="darktext"/>
       <input class="smallbutton" type="submit" value="Send" />
     </form>
+    </div>
     </div>
     <!--end message section-->
 
