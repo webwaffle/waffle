@@ -30,9 +30,24 @@ foreach(array_reverse($array_of_posts) as $current) {
             echo('<img class="imgpage" src="imguploads/' . $current->title . $current->file_ext . '" />');
         	}
 				}
+				//begin like section
+				if (!(in_array($_SESSION["username"], $current->likers))) {
+					echo('
+					<form action="like-process.php?post=' . $_GET["post"] . '" method="POST">
+					<input type="image" id="likesubmit" name="submit" alt="Submit" src="logo.jpg" />
+					<p class="darktext liketext">' . $current->likes . '</p> 
+					</form>');
+				} else {
+					echo('
+					<form action="like-process.php?unlike=unlike&post=' . $_GET["post"] . '" method="POST">
+					<input type="image" id="likesubmit" name="submit" alt="Submit" src="logo-grayed.jpg" />
+					<p class="darktext liketext">' . $current->likes . '</p> 
+					</form>');
+				}
+				//end
 				echo('
 				<form action="comment-process.php" method="POST">
-					<input type="text" class="darktext" name="comment" />
+					<input type="text" class="smalltext" name="comment" />
 					<input type="submit" class="smallbutton" value="comment" />
 				</form>
 				');
@@ -59,7 +74,8 @@ foreach(array_reverse($array_of_posts) as $current) {
 					echo("No comments found.");
 				}
 				//end comment section
-        echo("</div>");
+		echo("</div>");
+		// end useful
 	}
 }
 ?>

@@ -1,6 +1,9 @@
 <?php
 session_start();
 date_default_timezone_set("America/New_York");
+if ($_POST["username"] == "" || $_POST["password"] == "") {
+	header("Location: index.html");
+}
 $array = [];
 $array["username"] = $_POST["username"];
 $array["password"] = $_POST["password"];

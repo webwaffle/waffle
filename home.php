@@ -14,6 +14,13 @@ session_start();
 
 <div id="main">
 <?php
+function cmp($a, $b)
+{
+    if ($a->likes == $b->likes) {
+        return 0;
+    }
+    return ($a->likes < $b->likes) ? -1 : 1;
+}
 $file="[" . substr(file_get_contents("json/posts.json"), 0, -1) . "]";
 $array_of_posts=json_decode($file);
 foreach(array_reverse($array_of_posts) as $current) {

@@ -192,6 +192,13 @@ a {
     background-color:#034078;
     margin-left: 0px;
 }
+#likesubmit {
+    width: 64px;
+    height: 64px;
+}
+.liketext {
+    display: inline;
+}
 /*
 https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2
 https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb
