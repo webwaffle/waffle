@@ -19,8 +19,10 @@ if ($_GET["user"] == $_SESSION["username"]) {
       <?php
       $file="[" . rtrim(file_get_contents("json/users.json"), ",") . "]";
       $json=json_decode($file);
+      $doesntexist = TRUE;
       foreach($json as $current) {
         if ($current->username == $_GET["user"]) {
+          $doesntexist = FALSE;
           $user = array();
           $user["username"] = $current->username;
           if (isset($current->bio)) {
@@ -33,6 +35,9 @@ if ($_GET["user"] == $_SESSION["username"]) {
           }
           //end
         }
+      }
+      if ($doesntexist) {
+        echo("<p class='darktext'>That user doesn't exist.</p>");
       }
       foreach ($json as $current) {
         if ($current->username == $_GET["user"]) {
@@ -50,10 +55,9 @@ if ($_GET["user"] == $_SESSION["username"]) {
             }
           }
         }
-      ?>
-      <div id="messages">
-      <?php
       //begin message section
+      if (!($doesntexist)) {
+      echo("<div id=\"messages\">");
       $u = $_SESSION["username"];
       $o = $_GET["user"];
       $file="[" . rtrim(file_get_contents("json/messages.json"), ",") . "]";
@@ -68,10 +72,12 @@ if ($_GET["user"] == $_SESSION["username"]) {
       }
       echo("</div>");
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
-      ?>
-      <input type="text" name="message" class="smalltext"/>
-      <input class="smallbutton" type="submit" value="Send" />
-    </form>
+      
+    echo('<input type="text" name="message" class="smalltext"/>
+    <input class="smallbutton" type="submit" value="Send" />
+    </form>');
+    }
+    ?>
     </div>
     <!--end message section-->
 

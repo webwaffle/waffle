@@ -6,6 +6,7 @@
         <li><a class="topbarlink" href="logout.php">Logout</a></li>
         <li><a class="topbarlink" href="you.php">My Profile</a></li>
         <li><a class="topbarlink" href="friends.php">My Friends</a></li>
+        <li><a class="topbarlink" href="user-find.php">Find a user</a></li>
         <li><a class="topbarlink" href="about.php">About</a></li>
         <li class="topbarlink"><?php echo($_SESSION["username"]); ?></li>
     </ul>
