@@ -93,10 +93,11 @@ li a {
     color: white;
 }
 li:hover {
-	background-color: white;
+    background-color: white;
+    color: #0A1128;
 }
 a.topbarlink:hover {
-	color: #0A1128;
+	color: inherit;
 }
 nav {
 	margin-left: 244px;
@@ -115,6 +116,9 @@ li {
 a {
     display: block;
     padding: 8px;
+}
+.right {
+    float: right;
 }
 .posttitle {
     white-space: nowrap;
@@ -151,6 +155,8 @@ a {
     width: 400px;
     border: 1px solid #0A1128;
     border-radius: 4px;
+    margin: 4px;
+    padding: 4px;
 }
 .message-out {
     min-width: 20px;
@@ -169,7 +175,7 @@ a {
     min-height: 5px;
     background-color: grey;
     padding: 5px;
-    border: 1px solid grey;
+    border: 1px solid #0A1128;
     border-radius: 200px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -199,6 +205,33 @@ a {
 .liketext {
     display: inline;
 }
+.dropdown-button {
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    overflow:hidden;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow:hidden;
+    height: 50px;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-button {background-color: #3e8e41;}
 /*
 https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2
 https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb
