@@ -34,13 +34,13 @@ foreach(array_reverse($array_of_posts) as $current) {
 				if (!(in_array($_SESSION["username"], $current->likers))) {
 					echo('
 					<form action="like-process.php?post=' . $_GET["post"] . '" method="POST">
-					<input type="image" id="likesubmit" name="submit" alt="Submit" src="logo.jpg" />
+					<input type="image" id="likesubmit" name="submit" alt="Submit" src="waffle-icon.png" />
 					<p class="darktext liketext">' . $current->likes . '</p> 
 					</form>');
 				} else {
 					echo('
 					<form action="like-process.php?unlike=unlike&post=' . $_GET["post"] . '" method="POST">
-					<input type="image" id="likesubmit" name="submit" alt="Submit" src="logo-grayed.jpg" />
+					<input type="image" id="likesubmit" name="submit" alt="Submit" src="waffle-icon-grayed.png" />
 					<p class="darktext liketext">' . $current->likes . '</p> 
 					</form>');
 				}
