@@ -21,5 +21,6 @@
 <p>If it's already been posted, <i>don't post it.</i></p>
 <h1>Punishments</h1>
 <p>You have 5 chances. Breaking Rule #1 and in extreme cases #2 will use 2. Breaking #5 and sometimes #2 will use 1. <br> Of course, I reserve the right to ban you if your case is too extreme.</p>
+<h6><i>Warning: Reasons for banning include, but are NOT limited to, the above.</i></h6>
 </body>
 </html>

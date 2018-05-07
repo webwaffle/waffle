@@ -17,8 +17,11 @@ html {
 	padding: 0px;
 }
 .darktext {
-	color: black;
+	color: #0A1128;
 }
 .u {
 	text-decoration: underline;
+}
+.centered {
+	text-align: center;
 }
