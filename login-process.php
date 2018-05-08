@@ -10,7 +10,7 @@ foreach($json as $current) {
 }
 if (isset($correct_password)) {
     if($correct_password==$_POST["password"]) {
-        echo("Password Correct");
+        //echo("Password Correct");
         $_SESSION["username"] = $_POST["username"];
         $logfile = fopen("log.txt", "a");
         fwrite($logfile, "[LOGIN]: User " . $_SESSION["username"] . " logged in at " . date('m-d-Y h:i:s A') . ".\n");
