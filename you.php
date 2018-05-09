@@ -25,18 +25,18 @@
                 if (isset($current->bio)) {
                     $you["bio"] = $current->bio;
                     echo('<p id="biotext" style="text-align: left; color: 0a1128;">' . $you["bio"] . '</p>');
-                    echo('<button id="biobutton">Change Bio</button>');
+                    echo('<button id="biobutton" class="smallbutton">Change Bio</button>');
                     echo('
                     <form method="POST" action="you-process.php" id="bioform">
                     <textarea rows="5" cols="40" name="bio">' . $current->bio . '</textarea>
-                    <input type="submit" value="Change bio" />
+                    <input type="submit" value="Change bio" class="smallbutton"/>
                     </form>
                     ');
                 }
                 else
                     echo('
                     <form method="POST" action="you-process.php">
-                    <textarea name="bio_new" rows="5" cols="40">Describe yourself...</textarea>
+                    <textarea name="bio_new" rows="5" cols="40" placeholder="Describe yourself..."></textarea>
                     <input type="submit" value="Add bio" />
                     </form>
                     ');
