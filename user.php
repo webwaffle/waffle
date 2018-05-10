@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start(); include("main.php");
 if ($_GET["user"] == $_SESSION["username"]) {
   //header("Location: you.php");
 }
@@ -44,7 +44,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
           foreach ($json as $current2) {
             if ($current2->username == $_SESSION["username"]) {
               if (in_array($_GET["user"], $current2->friends)) {
-                echo('<p class="darktext">' . $_GET["user"] . ' is already in your friends list.</p>');
+                echo('<p class="darktext">' . $_GET["user"] . ' is in your friends list.</p>');
               }
               else {
                 echo("<form action='friend-process.php?user=" . $_GET["user"] . "' method='POST'>
@@ -92,6 +92,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
     </form>');
     }
     ?>
+    fore
     </div>
     <!--end message section-->
 

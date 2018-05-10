@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); include("main.php");?>
 <html>
 <head>
     <link rel="stylesheet" href="css/home.css" type="text/css" />

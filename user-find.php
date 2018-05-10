@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); include("main.php"); ?>
 <html>
 <head>
 <title>Find a user</title>
