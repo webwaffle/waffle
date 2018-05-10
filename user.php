@@ -66,10 +66,17 @@ if ($_GET["user"] == $_SESSION["username"]) {
         if ($u == $c->sender && $o == $c->receiver) {
           echo("<p class='message-out'>" . $c->message . "</p><br><br>");
           //$c->read = "read";
+          if (!(isset($c->read))) {
+            $c->read = "unread";
+          }
         }
         if ($u == $c->receiver && $o == $c->sender) {
           echo("<p class='message-in darktext'>" . $c->message . "</p><br><br>");
-          $c->read = "read";
+          if (isset($c->read)) {
+            $c->read = "read";
+          } else {
+            $c->read = "read";
+          }
         }
       }
       print_r($json);
