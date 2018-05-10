@@ -65,11 +65,18 @@ if ($_GET["user"] == $_SESSION["username"]) {
       foreach($json as $c) {
         if ($u == $c->sender && $o == $c->receiver) {
           echo("<p class='message-out'>" . $c->message . "</p><br><br>");
+          //$c->read = "read";
         }
         if ($u == $c->receiver && $o == $c->sender) {
           echo("<p class='message-in darktext'>" . $c->message . "</p><br><br>");
+          $c->read = "read";
         }
       }
+      print_r($json);
+      $json_string = json_encode($json, JSON_PRETTY_PRINT);
+      $json_string2 = substr($json_string, 1, -1);
+      $json_string3 = $json_string2 . ",";
+      file_put_contents("json/messages.json", $json_string3);
       echo("</div>");
       echo("<form method='POST' action='msg-process.php?rec=" . $_GET["user"] . "'>");
       
