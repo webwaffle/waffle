@@ -32,6 +32,6 @@
     <h1 class="darktext centered" id="slogan">Waffle: 100% Organic Social Media</h1>
     <p class="darktext centered">Waffle is a free, <a href="https://github.com/webwaffle/waffle" class="link">open source</a> social media site.<br>
     We do not share your data with any third parties. <br></p>
-    <a href="user-create.html" class="button">Create My Account</a>
+    <a href="user-create.php" class="button">Create My Account</a>
 </body>
 </html>

@@ -10,13 +10,21 @@ if(!(isset($_POST["rules"]))) {
 } else {
 	$agreed = TRUE;
 }
+$pswd = file("config.txt")[1];
+if ($pswd == $_POST["private_password"] && isset($_GET["private"])) {
+	$p = TRUE;
+} elseif (!isset($_GET["private"])) {
+	$p = TRUE;
+} else {
+	$p = FALSE;
+}
 $array = [];
 $array["username"] = $_POST["username"];
 $array["password"] = $_POST["password"];
 $friends = [];
 $array["friends"] = $friends;
 $json_string = json_encode($array, JSON_PRETTY_PRINT);
-if($agreed) {
+if($agreed && $p) {
 	file_put_contents("json/users.json", $json_string . ",", FILE_APPEND);
 	$_SESSION["username"] = $_POST["username"];
 	$logfile = fopen("log.txt", "a");
