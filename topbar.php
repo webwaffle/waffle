@@ -1,5 +1,5 @@
 <nav>
-    <h1 style="text-align: center; margin-top: 5px;">Waffle</h1>
+    <h1 style="text-align: center; margin-top: 0px; padding: 4px;">Waffle</h1>
     <ul>
         <li><a class="topbarlink" href="home.php">Home</a></li>
         <li><a class="topbarlink" href="https://github.com/webwaffle/waffle">Code</a></li>

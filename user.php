@@ -89,7 +89,15 @@ if ($_GET["user"] == $_SESSION["username"]) {
       
     echo('<input type="text" name="message" class="smalltext"/>
     <input class="smallbutton" type="submit" value="Send" />
-    </form>');
+    </form>'); ?>
+    <h2 class="darktext">Their Posts</h2><?php
+    $file="[" . rtrim(file_get_contents("json/posts.json"), ",") . "]";
+    $json=json_decode($file);
+    foreach(array_reverse($json) as $c) {
+      if ($c->poster == $_GET["user"]) {
+        dp($c, FALSE);
+      }
+    }
     }
     ?>
     fore

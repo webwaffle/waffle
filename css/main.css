@@ -6,6 +6,7 @@ body {
 	overflow: auto;
 	/*background-color: rgb(0, 20, 64);*/
 	background-color: white;
+	margin: 0px;
 }
 a {
 	text-decoration: none;
