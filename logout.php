@@ -1,4 +1,6 @@
 <?php
-$_SESSION = array();
-header("Location: index.html");
+session_start();
+session_unset();
+session_destroy();
 ?>
+You are now logged out. <a href="index.html">Login</a>
