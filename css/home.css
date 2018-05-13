@@ -237,6 +237,9 @@ a {
 .dropdown-content a:hover {background-color: #ddd}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropdown-button {background-color: #3e8e41;}
+.postpagetext {
+    overflow-wrap: break-word;
+}
 /*
 https://coolors.co/5a7d7c-dadff7-232c33-a0c1d1-b5b2c2
 https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb
