@@ -21,6 +21,7 @@ if ($pswd == $_POST["private_password"] && isset($_GET["private"])) {
 $array = [];
 $array["username"] = $_POST["username"];
 $array["password"] = $_POST["password"];
+$array["level"] = 0;
 $friends = [];
 $array["friends"] = $friends;
 $json_string = json_encode($array, JSON_PRETTY_PRINT);

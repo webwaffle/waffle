@@ -23,6 +23,12 @@ if ($_GET["user"] == $_SESSION["username"]) {
       foreach($json as $current) {
         if ($current->username == $_GET["user"]) {
           $doesntexist = FALSE;
+          if (isset($current->level)) {
+            if ($current->level < 0) {
+              echo("<p class=\"darktext\">That user was banned.</p>");
+              break;
+            }
+          }
           $user = array();
           $user["username"] = $current->username;
           if (isset($current->bio)) {
@@ -32,6 +38,13 @@ if ($_GET["user"] == $_SESSION["username"]) {
           echo("<h1 style='color: #0a1128;'>" . $user["username"] . "</h1>");
           if (isset($user["bio"])) {
             echo("<p style='color: #0a1128;'>" . $user["bio"] . "</p>");
+          }
+          if ($_SESSION["mod"] == "mod") {
+            echo('
+            <form method="POST" action="delete.php?type=user&user=' . $current->username . '">
+            <input type="submit" class="redbutton" value="Ban User" />
+            </form>
+            ');
           }
           //end
         }
