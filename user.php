@@ -79,7 +79,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
           }
         }
       }
-      print_r($json);
+      //print_r($json);
       $json_string = json_encode($json, JSON_PRETTY_PRINT);
       $json_string2 = substr($json_string, 1, -1);
       $json_string3 = $json_string2 . ",";
