@@ -25,6 +25,13 @@ foreach(array_reverse($array_of_posts) as $current) {
     	if (isset($current->title)) {
     		echo('<a href="posts.php?post=' . $current->title . '">' . '<h1 class="posttitle darktext">' . $current->title . "</h1></a>");
 		}
+		if ($_SESSION["mod"] == "mod") {
+			echo('
+			<form method="POST" action="delete.php?type=post&post=' . $current->title . '">
+        	<input type="submit" class="redbutton" value="Remove Post Permanently" />
+        	</form>
+			');
+		}
     	echo('<p class="timetext">Posted on ' . $current->time . '<br>By <a style="color:grey; display: inline;" href="user.php?user=' . $current->poster . '">' . $current->poster . '</a></p><p class="postpagetext darktext">' . $current->text . '</p>');
         if (isset($current->file_ext)) {
 					if ($current->file_ext != "") {

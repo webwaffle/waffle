@@ -8,6 +8,10 @@ $json = json_decode($file);
 foreach($json as $current) {
     if($current->username==$_POST["username"]) {
         $correct_password = $current->password;
+        if ($current->level < 0) {
+            echo("You have been banned.");
+            exit();
+        }
         if (in_array($current->username, $mods)) {
             $_SESSION["mod"] = "mod";
         } else {
@@ -15,7 +19,7 @@ foreach($json as $current) {
         }
     }
 }
-print_r($mods);
+//print_r($mods);
 if (isset($correct_password)) {
     if($correct_password==$_POST["password"]) {
         //echo("Password Correct");

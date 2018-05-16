@@ -19,16 +19,21 @@ if ($_GET["user"] == $_SESSION["username"]) {
       <?php
       $file="[" . rtrim(file_get_contents("json/users.json"), ",") . "]";
       $json=json_decode($file);
-      $doesntexist = TRUE;
+      $notavailible = TRUE;
       foreach($json as $current) {
         if ($current->username == $_GET["user"]) {
-          $doesntexist = FALSE;
+          
           if (isset($current->level)) {
-            if ($current->level < 0) {
-              echo("<p class=\"darktext\">That user was banned.</p>");
+            if ($current->level < 0 && $_SESSION["mod"] == "mod") {
+              echo('
+              <form method="POST" action="delete.php?type=user&unban=unban&user=' . $current->username . '">
+              <input type="submit" class="redbutton" value="Unban User" />
+              </form>
+            ');
               break;
             }
           }
+          $notavailible = FALSE;
           $user = array();
           $user["username"] = $current->username;
           if (isset($current->bio)) {
@@ -49,9 +54,10 @@ if ($_GET["user"] == $_SESSION["username"]) {
           //end
         }
       }
-      if ($doesntexist) {
-        echo("<p class='darktext'>That user doesn't exist.</p>");
+      if ($notavailible) {
+        echo("<p class='darktext'>That user doesn't exist or was banned.</p>");
       }
+      
       foreach ($json as $current) {
         if ($current->username == $_GET["user"]) {
           foreach ($json as $current2) {
@@ -69,7 +75,7 @@ if ($_GET["user"] == $_SESSION["username"]) {
           }
         }
       //begin message section
-      if (!($doesntexist)) {
+      if (!($notavailible)) {
       echo("<div id=\"messages\">");
       $u = $_SESSION["username"];
       $o = $_GET["user"];
