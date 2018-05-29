@@ -10,13 +10,16 @@ if(!(isset($_POST["rules"]))) {
 } else {
 	$agreed = TRUE;
 }
-$pswd = file("config.txt")[1];
+$pswd = rtrim(file("config.txt")[1]);
 if ($pswd == $_POST["private_password"] && isset($_GET["private"])) {
+	//echo(0);
 	$p = TRUE;
 } elseif (!isset($_GET["private"])) {
+	//echo(1);
 	$p = TRUE;
 } else {
 	$p = FALSE;
+	//echo(2);
 }
 $array = [];
 $array["username"] = $_POST["username"];
